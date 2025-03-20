@@ -1,0 +1,434 @@
+@use "globals" as *;
+@use "base";
+@use "header";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap");
+
+@mixin isMobile {
+  @media (max-width: $width-mob) {
+    @content;
+  }
+}
+
+@mixin isDesktop {
+  @media (min-width: $width-mob) {
+    @content;
+  }
+}
+
+.hero-section {
+  color: $light-text;
+  padding: 6.4rem 2.5rem;
+  text-align: center;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: start;
+
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(70%);
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    h1 {
+      font-size: 3.2rem;
+    }
+
+    p {
+      font-size: 1.8rem;
+      margin-bottom: 3.2rem;
+    }
+
+    .hero-cta {
+      font-size: 1.8rem;
+      padding: 1.4rem 3.2rem;
+    }
+  }
+  .benefit-title {
+    font-weight: 600;
+  }
+
+  .hero-summary-item {
+    font-size: $font-m;
+  }
+  .hero-summary-icon {
+    color: $accent-color;
+    font-weight: 900;
+  }
+}
+
+.benefits-section {
+  background-color: #f3f4f6;
+  background: url("../img/housekeepers-bg.png") no-repeat center bottom;
+  background-size: 150%;
+  @include isDesktop() {
+    background: url("../img/housekeepers-bg.png") no-repeat center bottom;
+    background-size: cover;
+  }
+
+  .benefits-heading {
+    text-align: center;
+    margin-bottom: 3.2rem;
+  }
+
+  .benefits-info {
+    text-align: center;
+    margin-bottom: 15rem;
+  }
+}
+
+.steps-section {
+  text-align: center;
+  background-color: $light-text;
+
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.2rem;
+    margin-top: 3.2rem;
+
+    .step {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      .step-number {
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: 2rem;
+        margin: 0 auto 1.6rem;
+      }
+
+      .step-content {
+        background-color: $secondary-color;
+        padding: 4rem 5rem;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+
+        .step-icon {
+          width: 4.8rem;
+          height: 4.8rem;
+          margin: 0 auto 1.6rem;
+        }
+
+        .step-title {
+          font-weight: 600;
+          font-size: 1.8rem;
+          margin-bottom: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+.booking-summary {
+  background-color: #fff;
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.03);
+  font-size: $font-s;
+  text-align: start;
+
+  .booking-summary-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .booking-summary-list {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+
+  .booking-summary-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+
+    .booking-summary-icon {
+      color: #2ecc71;
+      font-size: 1.2rem;
+      margin-right: 0.5rem;
+    }
+
+    .booking-summary-label {
+      font-weight: 600;
+      margin-right: 0.5rem;
+    }
+
+    .booking-summary-value {
+      font-weight: 400;
+    }
+  }
+
+  .booking-summary-tasks {
+    .booking-summary-tasks-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .booking-summary-tasks-list {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .booking-summary-task {
+      border-radius: 0.5rem;
+      padding: 1rem;
+      text-align: center;
+      width: 100%;
+      box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+
+      .booking-summary-task-icon {
+        display: block;
+        padding: 1rem;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto 0.5rem;
+      }
+    }
+  }
+}
+
+.earnings-section {
+  background-color: $light-text;
+  text-align: center;
+
+  .earnings-table {
+    width: 100%;
+    margin-top: 3.2rem;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+
+    th,
+    td {
+      padding: 1.2rem;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: $primary-color;
+      color: $light-text;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8f8f8;
+    }
+  }
+}
+
+.faq-section {
+  .faq-list {
+    margin-top: 3.2rem;
+
+    .faq-item {
+      background-color: #fff;
+      border-radius: $border-radius;
+      margin-bottom: 1.6rem;
+      box-shadow: $box-shadow;
+      overflow: hidden;
+
+      .faq-question {
+        padding: 1.6rem;
+        background-color: $primary-color;
+        color: $light-text;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:after {
+          content: "+";
+          font-size: 2.4rem;
+          font-weight: 300;
+        }
+      }
+
+      &.active {
+        .faq-question:after {
+          content: "−";
+        }
+        .faq-answer {
+          max-height: 32rem;
+          padding: 1.6rem;
+        }
+      }
+
+      .faq-answer {
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}
+
+.map-section {
+  background-color: $light-text;
+  text-align: center;
+
+  .map-container {
+    width: 100%;
+    height: 32rem;
+    margin-top: 3.2rem;
+    border-radius: $border-radius;
+    overflow: hidden;
+    box-shadow: $box-shadow;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+.contact-section {
+  background-color: $secondary-color;
+  text-align: center;
+
+  .contact-form {
+    background-color: #fff;
+    padding: 3.2rem;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    margin-top: 3.2rem;
+    text-align: left;
+
+    .form-group {
+      margin-bottom: 2.4rem;
+
+      .form-label {
+        display: block;
+        margin-bottom: 0.8rem;
+        font-weight: 500;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 1.2rem;
+        border: 1px solid #ddd;
+        border-radius: $border-radius;
+        font-size: 1.6rem;
+
+        &:focus {
+          outline: none;
+          border-color: $primary-color;
+        }
+      }
+    }
+
+    .contact-options {
+      display: flex;
+      justify-content: center;
+      gap: 1.6rem;
+      margin-top: 2.4rem;
+
+      .contact-option {
+        flex: 1;
+        padding: 1.2rem;
+        border-radius: $border-radius;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        text-decoration: none;
+
+        &.whatsapp {
+          background-color: #25d366;
+          color: #fff;
+        }
+        &.telegram {
+          background-color: #0088cc;
+          color: #fff;
+        }
+
+        .contact-icon {
+          margin-right: 0.8rem;
+        }
+      }
+    }
+  }
+}
+
+.call-button {
+  position: fixed;
+  bottom: 1.6rem;
+  right: 1.6rem;
+  background-color: $accent-color;
+  color: $light-text;
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+  z-index: 100;
+
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    fill: $light-text;
+  }
+}
+
+.site-footer {
+  background-color: $dark-text;
+  color: $light-text;
+  padding: 3.2rem 0;
+  text-align: center;
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2.4rem;
+    margin-top: 1.6rem;
+
+    .footer-link {
+      color: $light-text;
+      font-size: 1.4rem;
+      text-decoration: none;
+    }
+  }
+}
+
+@media (min-width: 48rem) {
+  .benefits-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .steps {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.titles-container {
+  text-align: center;
+}

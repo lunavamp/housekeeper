@@ -1,0 +1,31 @@
+$color-1: #1d1e22;
+$color-2: #fafafa;
+
+$width-mob: 980px;
+$text-color: #fafafa;
+$brand-color: #f17938;
+$secondary-text: #fff;
+// light:
+$text-color: $color-1;
+$bg-color: $color-2;
+
+// dark:
+$text-color-dark: $color-2;
+$bg-color-dark: $color-1;
+$font-s: 1.4rem;
+$font-m: 1.8rem;
+$font-l: 2.4rem;
+$font-xl: 2.7rem;
+$font-xxl: 3.7rem;
+
+$font-header: serif;
+$font-main: sans-serif;
+
+$primary-color: #1e3a8a; // насыщенный глубокий синий
+$secondary-color: #f3f4f6; // легкий, почти белый фон
+$accent-color: #10b981; // яркий зелёный для акцентов
+$text-color: #374151; // современный тёмный оттенок для текста
+$light-text: #ffffff; // чистый белый
+$dark-text: #111111; // почти черный для контраста
+$border-radius: 0.8rem;
+$box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);

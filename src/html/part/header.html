@@ -1,0 +1,81 @@
+@@include('meta-seo.html', {title: "@@title", description: "@@description"})
+<!-- Языковой переключатель -->
+<div class="language-selector">
+  <select id="language-select">
+    <option value="en">En</option>
+    <option value="ru">Ру</option>
+    <option value="es">Es</option>
+  </select>
+</div>
+
+<!-- Шапка сайта (Header) -->
+<header class="site-header">
+  <div class="header-container">
+    <a href="#" class="logo">@@COMPANY_NAME</a>
+    <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a
+          href="#benefits"
+          class="nav-link"
+          data-en="Benefits"
+          data-ru="Преимущества"
+          data-es="Beneficios"
+          >Benefits</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          href="#how-it-works"
+          class="nav-link"
+          data-en="How It Works"
+          data-ru="Как это работает"
+          data-es="Cómo funciona"
+          >How It Works</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          href="#earnings"
+          class="nav-link"
+          data-en="Earnings"
+          data-ru="Заработок"
+          data-es="Ganancias"
+          >Earnings</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          href="#faq"
+          class="nav-link"
+          data-en="FAQ"
+          data-ru="Вопросы"
+          data-es="Preguntas"
+          >FAQ</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          href="#map"
+          class="nav-link"
+          data-en="Work Areas"
+          data-ru="Зоны работы"
+          data-es="Áreas de trabajo"
+          >Work Areas</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          href="#contact"
+          class="nav-link"
+          data-en="Apply"
+          data-ru="Оставить заявку"
+          data-es="Aplicar"
+          >Apply</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
