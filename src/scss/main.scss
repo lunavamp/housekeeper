@@ -34,7 +34,7 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    filter: brightness(70%);
+    filter: brightness(50%) contrast(90%);
   }
 
   .hero-content {
@@ -47,6 +47,7 @@
 
     h1 {
       font-size: 3.2rem;
+      text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
     }
 
     p {
@@ -63,6 +64,21 @@
     font-weight: 600;
   }
 
+  .hero-summary-list {
+    text-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+  }
+
+  li {
+    display: flex;
+  }
+
+  li::before {
+    content: "✔";
+    color: $accent-color;
+    font-size: 1.2em;
+    margin-right: 0.8rem;
+  }
+
   .hero-summary-item {
     font-size: $font-m;
   }
@@ -73,8 +89,7 @@
 }
 
 .benefits-section {
-  background-color: #f3f4f6;
-  background: url("../img/housekeepers-bg.png") no-repeat center bottom;
+  background: #f3f4f6 url("../img/housekeepers-bg.png") no-repeat center bottom;
   background-size: 150%;
   @include isDesktop() {
     background: url("../img/housekeepers-bg.png") no-repeat center bottom;
@@ -88,7 +103,7 @@
 
   .benefits-info {
     text-align: center;
-    margin-bottom: 15rem;
+    margin-bottom: 16rem;
   }
 }
 
@@ -99,7 +114,7 @@
   .steps {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3.2rem;
+    gap: 4rem;
     margin-top: 3.2rem;
 
     .step {
@@ -120,7 +135,7 @@
 
       .step-content {
         background-color: $secondary-color;
-        padding: 4rem 5rem;
+        padding: 4.5rem 6.2rem;
         border-radius: $border-radius;
         box-shadow: $box-shadow;
 
@@ -136,13 +151,53 @@
           margin-bottom: 0.8rem;
         }
       }
+
+      .step-content-bottom[class] {
+        padding: 9rem 6.2rem 0;
+      }
     }
+  }
+}
+
+.sign-step-container {
+  background: url("../img/man-thumb-up.png") no-repeat top right;
+  background-size: contain;
+}
+
+.sign-step {
+  .contact-form {
+    background-color: #fff;
+    padding: 3.2rem;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+    text-align: left;
+
+    .form-group {
+      margin-bottom: 2.4rem;
+
+      .form-label {
+        display: block;
+        font-weight: 500;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-bottom: 0.2rem solid $primary-color;
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  .fake-form[class] {
+    border-bottom: none;
   }
 }
 
 .booking-summary {
   background-color: #fff;
-  padding: 2.5rem;
+  padding: 2.5rem 2.1rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.03);
   font-size: $font-s;
@@ -225,7 +280,7 @@
 
     th,
     td {
-      padding: 1.2rem;
+      padding: 1.2rem 0.8rem;
       border: 1px solid #ddd;
       text-align: center;
     }
@@ -264,7 +319,7 @@
 
         &:after {
           content: "+";
-          font-size: 2.4rem;
+          font-size: 2.7rem;
           font-weight: 300;
         }
       }
@@ -289,6 +344,8 @@
   }
 }
 
+/* Основной фон секции под карту */
+
 .map-section {
   background-color: $light-text;
   text-align: center;
@@ -301,10 +358,10 @@
     overflow: hidden;
     box-shadow: $box-shadow;
 
-    img {
-      width: 100%;
+    iframe {
+      border: none;
       height: 100%;
-      object-fit: cover;
+      width: 100%;
     }
   }
 }
@@ -326,21 +383,24 @@
 
       .form-label {
         display: block;
-        margin-bottom: 0.8rem;
         font-weight: 500;
       }
 
       .form-control {
         width: 100%;
-        padding: 1.2rem;
-        border: 1px solid #ddd;
-        border-radius: $border-radius;
+        padding: 1rem;
+        border: none;
+        border-bottom: 0.2rem solid $primary-color;
         font-size: 1.6rem;
 
         &:focus {
           outline: none;
-          border-color: $primary-color;
+          border-color: $accent-color-2;
         }
+      }
+
+      textarea {
+        resize: none;
       }
     }
 
@@ -431,4 +491,7 @@
 
 .titles-container {
   text-align: center;
+  .subtitle {
+    margin-bottom: 0.9rem;
+  }
 }

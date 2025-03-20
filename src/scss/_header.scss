@@ -1,6 +1,5 @@
 @use "globals" as *;
 /* header */
-
 .language-selector {
   position: fixed;
   top: 1.6rem;
@@ -9,17 +8,60 @@
   background-color: #fff;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
-  padding: 0.8rem;
+  padding: 0.6rem;
 
-  select {
-    border: 1px solid #ddd;
-    padding: 0.4rem;
-    border-radius: 0.4rem;
-    font-size: 1.4rem;
+  .dropdown {
+    position: relative;
+    display: inline-block;
+
+    .current-language {
+      border: 0.1rem solid $accent-color-2;
+      padding: 0.4rem;
+      border-radius: 0.4rem;
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      &::after {
+        content: url("../img/icons/arrow-bottom.svg");
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: none; /* Скрыто по умолчанию */
+      margin: 0;
+      padding: 0.4rem 0;
+      list-style: none;
+      background-color: #fff;
+      border: 0.1rem solid $accent-color-2;
+      border-radius: 0.4rem;
+
+      li {
+        padding: 0.4rem 1rem;
+        font-size: 1.4rem;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #eee;
+        }
+      }
+    }
+
+    /* При наведении на dropdown – показать список */
+    &:hover .dropdown-menu {
+      display: block;
+    }
   }
 }
 
-body.is-scroll {
+body.is-scroll,
+body.is-nav-active {
   .site-header {
     background-color: $primary-color;
     box-shadow: $box-shadow;
@@ -51,7 +93,7 @@ body.is-scroll {
     background: none;
     border: none;
     color: $light-text;
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     cursor: pointer;
     padding: 0.4rem;
   }

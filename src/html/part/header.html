@@ -1,11 +1,15 @@
 @@include('meta-seo.html', {title: "@@title", description: "@@description"})
 <!-- Языковой переключатель -->
 <div class="language-selector">
-  <select id="language-select">
-    <option value="en">En</option>
-    <option value="ru">Ру</option>
-    <option value="es">Es</option>
-  </select>
+  <div class="dropdown">
+    <div class="current-language" id="language-select">En</div>
+
+    <ul class="dropdown-menu">
+      <li data-lang="en">En</li>
+      <li data-lang="ru">Ру</li>
+      <li data-lang="es">Es</li>
+    </ul>
+  </div>
 </div>
 
 <!-- Шапка сайта (Header) -->
