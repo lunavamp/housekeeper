@@ -439,23 +439,39 @@
 
 .call-button {
   position: fixed;
-  bottom: 1.6rem;
-  right: 1.6rem;
+  bottom: 2rem;
+  right: 2rem;
   background-color: $accent-color;
   color: $light-text;
-  width: 5.6rem;
-  height: 5.6rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
   z-index: 100;
+  animation: pulse 2s infinite;
 
   svg {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2.6rem;
+    height: 2.6rem;
     fill: $light-text;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0.6rem 1rem rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
   }
 }
 
